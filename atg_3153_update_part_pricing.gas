@@ -1,0 +1,675 @@
+Program.Sub.ScreenSU.Start
+gui.F_Update..create
+gui.F_Update..caption("Update Part Pricing")
+gui.F_Update..size(12000,8175)
+gui.F_Update..position(0,0)
+gui.F_Update..event(resize,f_update_resize)
+gui.F_Update..event(unload,f_update_unload)
+gui.F_Update..alwaysontop(False)
+gui.F_Update..fontname("Arial")
+gui.F_Update..fontsize(8)
+gui.F_Update..forecolor(0)
+gui.F_Update..fontstyle(,,,,)
+gui.F_Update..BackColor(-2147483633)
+gui.F_Update..controlbox(True)
+gui.F_Update..maxbutton(True)
+gui.F_Update..minbutton(True)
+gui.F_Update..mousepointer(0)
+gui.F_Update..moveable(True)
+gui.F_Update..sizeable(True)
+gui.F_Update..ShowInTaskBar(True)
+gui.F_Update..titlebar(True)
+gui.F_Update.frame1.create(frame)
+gui.F_Update.frame1.caption("")
+gui.F_Update.frame1.size(11550,1665)
+gui.F_Update.frame1.position(100,100)
+gui.F_Update.frame1.visible(True)
+gui.F_Update.frame1.borderstyle(0)
+gui.F_Update.frame1.fontname("Arial")
+gui.F_Update.frame1.fontsize(8)
+gui.F_Update.txtPart1.create(textbox,"",True,1800,300,0,100,315,True,0,Arial,8,-2147483643,1)
+gui.F_Update.txtPart1.parent("frame1")
+gui.F_Update.txtPart2.create(textbox,"",True,1800,300,0,2400,315,True,0,Arial,8,-2147483643,1)
+gui.F_Update.txtPart2.parent("frame1")
+gui.F_Update.cmdPartBrowser2.create(button)
+gui.F_Update.cmdPartBrowser2.caption("^")
+gui.F_Update.cmdPartBrowser2.visible(True)
+gui.F_Update.cmdPartBrowser2.size(375,375)
+gui.F_Update.cmdPartBrowser2.zorder(0)
+gui.F_Update.cmdPartBrowser2.position(4210,275)
+gui.F_Update.cmdPartBrowser2.enabled(True)
+gui.F_Update.cmdPartBrowser2.parent("frame1")
+gui.F_Update.cmdPartBrowser2.fontname("Arial")
+gui.F_Update.cmdPartBrowser2.fontsize(8)
+gui.F_Update.cmdPartBrowser2.event(click,cmdpartbrowser2_click)
+gui.F_Update.cmdPartBrowser1.create(button)
+gui.F_Update.cmdPartBrowser1.caption("^")
+gui.F_Update.cmdPartBrowser1.visible(True)
+gui.F_Update.cmdPartBrowser1.size(375,375)
+gui.F_Update.cmdPartBrowser1.zorder(0)
+gui.F_Update.cmdPartBrowser1.position(1930,275)
+gui.F_Update.cmdPartBrowser1.enabled(True)
+gui.F_Update.cmdPartBrowser1.parent("frame1")
+gui.F_Update.cmdPartBrowser1.fontname("Arial")
+gui.F_Update.cmdPartBrowser1.fontsize(8)
+gui.F_Update.cmdPartBrowser1.event(click,cmdpartbrowser1_click)
+gui.F_Update.cmdAdd.create(button)
+gui.F_Update.cmdAdd.caption("Add")
+gui.F_Update.cmdAdd.visible(True)
+gui.F_Update.cmdAdd.size(855,375)
+gui.F_Update.cmdAdd.zorder(0)
+gui.F_Update.cmdAdd.position(100,715)
+gui.F_Update.cmdAdd.enabled(True)
+gui.F_Update.cmdAdd.parent("frame1")
+gui.F_Update.cmdAdd.fontname("Arial")
+gui.F_Update.cmdAdd.fontsize(8)
+gui.F_Update.cmdAdd.event(click,cmdadd_click)
+gui.F_Update.gsflexgrid1.create(gsflexgrid)
+gui.F_Update.gsflexgrid1.FixedRows(0)
+gui.F_Update.gsflexgrid1.FixedCols(0)
+gui.F_Update.gsflexgrid1.visible(True)
+gui.F_Update.gsflexgrid1.size(11295,5025)
+gui.F_Update.gsflexgrid1.zorder(0)
+gui.F_Update.gsflexgrid1.position(200,1900)
+gui.F_Update.gsflexgrid1.enabled(True)
+gui.F_Update.cmdUpdate.create(button)
+gui.F_Update.cmdUpdate.caption("Update")
+gui.F_Update.cmdUpdate.visible(True)
+gui.F_Update.cmdUpdate.size(855,375)
+gui.F_Update.cmdUpdate.zorder(0)
+gui.F_Update.cmdUpdate.position(200,7100)
+gui.F_Update.cmdUpdate.enabled(True)
+gui.F_Update.cmdUpdate.fontname("Arial")
+gui.F_Update.cmdUpdate.fontsize(8)
+gui.F_Update.cmdUpdate.event(click,cmdupdate_click)
+gui.F_Update.cmdUpdate.disableonclick(10)
+gui.F_Update.lvwRange.create(listview)
+gui.F_Update.lvwRange.view(3)
+gui.F_Update.lvwRange.addlistviewcolumn("Range1",3250,0)
+gui.F_Update.lvwRange.addlistviewcolumn("Range 2",3250,0)
+gui.F_Update.lvwRange.visible(True)
+gui.F_Update.lvwRange.size(6645,1260)
+gui.F_Update.lvwRange.zorder(0)
+gui.F_Update.lvwRange.position(4745,315)
+gui.F_Update.lvwRange.enabled(True)
+gui.F_Update.lvwRange.borderstyle(0)
+gui.F_Update.lvwRange.parent("frame1")
+gui.F_Update.lvwRange.fontname("Arial")
+gui.F_Update.lvwRange.fontsize(8)
+gui.F_Update.lbl1.create(label,"Part Range",True,1935,255,1,100,100,True,0,Arial,8,-2147483633,0)
+gui.F_Update.lbl1.parent("frame1")
+gui.F_Update.cmdDisplay.create(button)
+gui.F_Update.cmdDisplay.caption("Display")
+gui.F_Update.cmdDisplay.visible(True)
+gui.F_Update.cmdDisplay.size(855,375)
+gui.F_Update.cmdDisplay.zorder(0)
+gui.F_Update.cmdDisplay.position(100,1195)
+gui.F_Update.cmdDisplay.enabled(True)
+gui.F_Update.cmdDisplay.parent("frame1")
+gui.F_Update.cmdDisplay.fontname("Arial")
+gui.F_Update.cmdDisplay.fontsize(8)
+gui.F_Update.cmdDisplay.event(click,cmddisplay_click)
+gui.F_Update.cmdDelete.create(button)
+gui.F_Update.cmdDelete.caption("Delete")
+gui.F_Update.cmdDelete.visible(True)
+gui.F_Update.cmdDelete.size(855,375)
+gui.F_Update.cmdDelete.zorder(0)
+gui.F_Update.cmdDelete.position(1100,715)
+gui.F_Update.cmdDelete.enabled(True)
+gui.F_Update.cmdDelete.parent("frame1")
+gui.F_Update.cmdDelete.fontname("Arial")
+gui.F_Update.cmdDelete.fontsize(8)
+gui.F_Update.cmdDelete.event(click,cmddelete_click)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+
+Variable.Global.iKey.Declare(Long,0)
+Variable.UDT.uUpdate.Define("Part",String)
+Variable.UDT.uUpdate.Define("Desc",String)
+Variable.UDT.uUpdate.Define("Cost",String)
+Variable.UDT.uUpdate.Define("CurAltCost",String)
+Variable.UDT.uUpdate.Define("NewAltCost",String)
+Variable.UDT.uUpdate.Define("Loc",String)
+Variable.uGlobal.uUpdate.Declare("uUpdate")
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: JLH
+'Project Start Date: 9/9/2011
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.Intrinsic.Control.CallSub(Buildstyle)
+
+Gui.F_Update..Show
+
+Program.Sub.Main.End
+
+program.sub.f_update_unload.start
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+program.sub.f_update_unload.end
+
+program.sub.f_update_resize.start
+V.Local.iWidth.Declare(Long)
+V.Local.iHeight.Declare(Long)
+
+F.Intrinsic.Control.If(V.Screen.F_Update.Width,<,12000)
+	Gui.F_Update..Size(12000,V.Screen.F_Update.Height)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_Update.Height,<,8175)
+	Gui.F_Update..Size(V.Screen.F_Update.Width,8175)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Math.Sub(V.Screen.F_Update.Width,705,V.Local.iWidth)
+F.Intrinsic.Math.Sub(V.Screen.F_Update.Height,3150,V.Local.iHeight)
+Gui.F_Update.gsflexgrid1.Size(V.Local.iWidth,V.Local.iHeight)
+
+F.Intrinsic.Math.Sub(V.Screen.F_Update.Height,1075,V.Local.iHeight)
+Gui.F_Update.cmdUpdate.Position(200,V.Local.iHeight)
+
+program.sub.f_update_resize.end
+
+program.sub.cmdpartbrowser1_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpartbrowser1_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+f.Intrinsic.UI.Browser(105,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Update.txtPart1.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdpartbrowser1_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Update_Part_Pricing.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpartbrowser1_click.end
+
+program.sub.cmdpartbrowser2_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpartbrowser2_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+f.Intrinsic.UI.Browser(105,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Update.txtPart2.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdpartbrowser2_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Update_Part_Pricing.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpartbrowser2_click.end
+
+program.sub.cmdadd_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdadd_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_Update!txtPart1.text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.F_Update!txtPart2.text,<>,"")
+	F.Intrinsic.Math.Add(V.Global.iKey,1,V.Global.iKey)
+	Gui.F_Update.lvwRange.AddListItem(V.global.iKey,V.Screen.F_Update!txtPart1.Text)
+	Gui.F_Update.lvwRange.SetListItemSubItemText(V.global.iKey,1,V.Screen.F_Update!txtPart2.Text)
+	Gui.F_Update.txtPart1.Text("")
+	Gui.F_Update.txtPart2.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdadd_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Update_Part_Pricing.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdadd_click.end
+
+program.sub.cmddisplay_click.start
+F.Intrinsic.Control.SetErrorHandler("cmddisplay_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.iUB.Declare(Long)
+
+'Gui.F_Update.gsflexgrid1.Visible(False)
+
+V.uGlobal.uUpdate.Redim(-1,-1)
+
+'Get SQL query for the range
+F.Intrinsic.Control.CallSub(Sql)
+V.Local.sQuery.Set(V.Args.SQL)
+
+F.Intrinsic.Control.If(V.Local.sQuery,<>,"")
+
+	F.ODBC.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+	'Loop through the recordset and add to UDT
+	F.Intrinsic.Control.DoUntil(V.ODBC.conx!rst.EOF,=,True)
+		'Redim UDT
+		F.Intrinsic.Control.If(V.uGlobal.uUpdate.UBound,=,-1)
+			V.uGlobal.uUpdate.Redim(0,0)
+		F.Intrinsic.Control.Else
+			V.Local.iUB.Set(V.uGlobal.uUpdate.UBound)
+			F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+			V.uGlobal.uUpdate.RedimPreserve(0,V.local.iUB)
+		F.Intrinsic.Control.EndIf
+		V.uGlobal.uUpdate(v.Local.iUB)!Part.Set(V.ODBC.conx!rst.FieldVal!PART)
+		V.uGlobal.uUpdate(v.Local.iUB)!Desc.Set(V.ODBC.conx!rst.FieldVal!DESCRIPTION)
+		V.uGlobal.uUpdate(v.Local.iUB)!Cost.Set(V.ODBC.conx!rst.FieldVal!AMT_COST)
+		V.uGlobal.uUpdate(v.Local.iUB)!CurAltCost.Set(V.ODBC.conx!rst.FieldVal!AMT_ALT_COST)
+		V.uGlobal.uUpdate(v.Local.iUB)!Loc.Set(V.ODBC.conx!rst.FieldVal!LOCATION)
+		F.ODBC.conx!rst.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.Conx!rst.Close
+
+	'Gui.F_Update.gsflexgrid1.Rows(2)
+	'Gui.F_Update.gsflexgrid1.FixedRows(1)
+
+	
+
+	gui.F_Update.gsflexgrid1.LoadFromUDT("uGlobal.uUpdate","Part*!*Desc*!*Cost*!*CurAltCost",2)
+F.Intrinsic.Control.EndIf
+
+'Gui.F_Update.gsflexgrid1.Visible(True)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmddisplay_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Update_Part_Pricing.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmddisplay_click.end
+
+program.sub.cmdupdate_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdupdate_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.iSum.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.sParam.Declare(String)
+V.Local.sCost.Declare(String)
+
+Gui.F_Update.gsflexgrid1.Commit
+
+'F.Intrinsic.Debug.InvokeDebugger
+F.Intrinsic.Debug.Stop
+
+'Updates the UDT with alt_cost
+V.Local.iSum.Set(V.Screen.F_Update!gsflexgrid1.Rows)
+F.Intrinsic.Math.sub(V.Local.iSum,1,V.Local.iSum)
+
+F.Intrinsic.Control.For(V.local.iCount,1,V.Local.iSum,1)
+	Gui.F_Update.gsflexgrid1.GetTextMatrix(4,V.Local.iCount,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		V.uGlobal.uUpdate(v.Local.iRow)!NewAltCost.Set(V.local.sRet)
+		F.Intrinsic.Math.Add(V.Local.iRow,1,V.Local.iRow)
+	F.Intrinsic.Control.Else
+		V.uGlobal.uUpdate(v.Local.iRow)!NewAltCost.Set("0")
+		F.Intrinsic.Math.Add(V.Local.iRow,1,V.Local.iRow)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.Control.CallSub(Rate_change)
+
+V.Local.sParam.Set("NS!*!0!*!!*!!*!!*!A")
+F.Global.General.CallWrappersync(3010,V.Local.sParam)
+
+F.Intrinsic.Control.CallSub(Spreadsheet)
+F.Intrinsic.Control.CallSub(Clear_form)
+
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdupdate_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Update_Part_Pricing.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdupdate_click.end
+
+program.sub.cmddelete_click.start
+F.Intrinsic.Control.SetErrorHandler("cmddelete_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sKey.Declare(String)
+V.Local.iOrd.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_Update!lvwRange.SelectedItemKey,<>,"")
+	V.Local.sKey.Set(V.Screen.F_Update!lvwRange.SelectedItemKey)
+	Gui.F_Update.lvwRange.RemoveItem(V.Local.sKey)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmddelete_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Update_Part_Pricing.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmddelete_click.end
+
+Program.Sub.BuildStyle.Start
+'Build serial flexgrid
+Gui.F_Update.gsflexgrid1.Cols(5)
+Gui.F_Update.gsflexgrid1.Rows(2)
+
+gui.F_Update.gsflexgrid1.SetColumnPercentages(".275:.275:.15:.15:.15")
+
+Gui.F_Update.gsflexgrid1.BuildStyle(1,0,"type","Locked",True)
+Gui.F_Update.gsflexgrid1.BuildStyle(1,1,"type","Locked",True)
+Gui.F_Update.gsflexgrid1.BuildStyle(1,2,"type","Locked",True)
+Gui.F_Update.gsflexgrid1.BuildStyle(1,3,"type","Locked",True)
+Gui.F_Update.gsflexgrid1.BuildStyle(1,4,"type","Locked",True)
+
+Gui.F_Update.gsflexgrid1.BuildStyle(1,0,"format","alignment",4)
+Gui.F_Update.gsflexgrid1.BuildStyle(1,1,"format","alignment",4)
+Gui.F_Update.gsflexgrid1.BuildStyle(1,2,"format","alignment",4)
+Gui.F_Update.gsflexgrid1.BuildStyle(1,3,"format","alignment",4)
+Gui.F_Update.gsflexgrid1.BuildStyle(1,4,"format","alignment",4)
+
+
+Gui.F_Update.gsflexgrid1.BuildStyle(2,0,"type","Locked",True)
+Gui.F_Update.gsflexgrid1.BuildStyle(2,1,"type","Locked",True)
+Gui.F_Update.gsflexgrid1.BuildStyle(2,2,"type","Locked",True)
+Gui.F_Update.gsflexgrid1.BuildStyle(2,3,"type","Locked",True)
+
+
+Gui.F_Update.gsflexgrid1.BuildStyle(2,0,"format","alignment",2)
+Gui.F_Update.gsflexgrid1.BuildStyle(2,1,"format","alignment",2)
+Gui.F_Update.gsflexgrid1.BuildStyle(2,2,"format","alignment",6)
+Gui.F_Update.gsflexgrid1.BuildStyle(2,3,"format","alignment",6)
+Gui.F_Update.gsflexgrid1.BuildStyle(2,4,"format","alignment",6)
+
+
+
+Gui.F_Update.gsflexgrid1.TextMatrix(0,0,"Part")
+Gui.F_Update.gsflexgrid1.TextMatrix(1,0,"Desc")
+Gui.F_Update.gsflexgrid1.TextMatrix(2,0,"Cost")
+Gui.F_Update.gsflexgrid1.TextMatrix(3,0,"Alt Cost")
+Gui.F_Update.gsflexgrid1.TextMatrix(4,0,"Change")
+
+
+Gui.F_Update.gsflexgrid1.ApplyStyle(0,1)
+
+'Gui.F_Update.gsflexgrid1.Rows(2)
+Gui.F_Update.gsflexgrid1.FixedRows(1)
+
+Program.Sub.BuildStyle.End
+
+Program.Sub.SQL.Start
+F.Intrinsic.Control.SetErrorHandler("SQL_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.sQuery.Declare(String)
+V.Local.stext.Declare(String)
+
+F.Intrinsic.Control.For(V.Local.iCount,1,V.Screen.F_Update!lvwRange.ListItemCount,1)
+	F.Intrinsic.Control.if(V.Local.iCount,=,1)
+		V.Local.stext.Set(V.Screen.F_Update!lvwRange.ListItemTextExtended(v.Local.iCount))
+		F.Intrinsic.String.Split(V.Local.stext,"*!*",V.Local.stext)
+		F.Intrinsic.String.Concat("Select * From INVENTORY_MSTR where PART BETWEEN '",V.Local.stext(0),"' AND '",V.Local.stext(1),"'",V.Local.sQuery)
+	F.Intrinsic.Control.Else
+		V.Local.stext.Set(V.Screen.F_Update!lvwRange.ListItemTextExtended(v.Local.iCount))
+		F.Intrinsic.String.Split(V.Local.stext,"*!*",V.Local.stext)
+		F.Intrinsic.String.Concat(V.local.sQuery," OR PART BETWEEN '",V.Local.stext(0),"' AND '",V.Local.stext(1),"'",V.Local.sQuery)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.Variable.AddRV("SQL",V.Local.sQuery)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("SQL_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Update_Part_Pricing.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.SQL.End
+
+Program.Sub.Spreadsheet.Start
+F.Intrinsic.Control.SetErrorHandler("Spreadsheet_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sText.Declare(String)
+V.Local.iCount.Declare(Long)
+V.local.sFile.Declare(String)
+V.Local.iLoop.Declare(Long)
+V.Local.sDate.Declare(String)
+V.Local.sTemp.Declare(String)
+
+V.Local.sPart.Redim(0,0)
+
+F.Intrinsic.Control.For(V.Local.iCount,0,V.uGlobal.uUpdate.UBound,1)
+	F.Intrinsic.String.Concat("Select DISTINCT ROUTER from ROUTER_LINE where PART_WC_OUTSIDE='",V.uGlobal.uUpdate(v.Local.iCount)!Part,"' and PART_LOCN='",V.uGlobal.uUpdate(v.Local.iCount)!Loc,"'",V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+	F.Intrinsic.Control.dountil(V.ODBC.conx!rst.EOF,=,True)
+		V.Local.sPart.RedimPreserve(0,V.Local.iLoop)
+		V.Local.sPart(v.Local.iLoop).Set(V.ODBC.conx!rst.FieldVal!ROUTER)
+		F.Intrinsic.Math.Add(V.Local.iLoop,1,V.Local.iLoop)
+		F.ODBC.conx!rst.MoveNext
+	F.Intrinsic.Control.loop
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.String.RemoveArrayDuplicates(V.Local.sPart,V.Local.sPart)
+
+V.Local.sText.Set("Supplier*!*Part Number*!*Flat Price*!*Qty 1*!*Price 1*!* Qty 2*!*Price 2*!*Qty 3*!*Price 3*!* Qty 4*!*Price 4*!*Qty 5*!*Price 5*!* Qty 6*!*Price 6*!*Qty 7*!*Price 7*!* Qty 8*!*Price 8$!$")
+
+V.Local.iCount.Set(0)
+F.Intrinsic.Control.For(V.Local.iCount,0,V.Local.sPart.UBound,1)
+	F.Intrinsic.String.Concat("Select * From OE_C_PART_P_BRK where PART='",V.Local.sPart(v.Local.iCount),"'",V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+	F.Intrinsic.String.left(V.local.sPart(v.Local.iCount),17,V.Local.sTemp)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+		F.Intrinsic.String.Concat(V.Local.sText,"72050","*!*",V.Local.stemp,"*!*","0.0000","*!*",V.Local.sText)
+		'#1
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!QB_QTY_1,=,0)
+			F.Intrinsic.String.Concat(V.Local.sText,"*!**!*",V.Local.sText)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!Price_1,"########.0000",V.local.stemp)
+			F.Intrinsic.String.Concat(V.Local.sText,V.ODBC.conx!rst.FieldVal!QB_QTY_1,"*!*",V.Local.sTemp,"*!*",V.Local.sText)
+		F.Intrinsic.Control.EndIf
+		'#2
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!QB_QTY_2,=,0)
+			F.Intrinsic.String.Concat(V.Local.sText,"*!**!*",V.Local.sText)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!Price_2,"########.0000",V.local.stemp)
+			F.Intrinsic.String.Concat(V.Local.sText,V.ODBC.conx!rst.FieldVal!QB_QTY_2,"*!*",V.Local.sTemp,"*!*",V.Local.sText)
+		F.Intrinsic.Control.EndIf
+		'#3
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!QB_QTY_3,=,0)
+			F.Intrinsic.String.Concat(V.Local.sText,"*!**!*",V.Local.sText)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!Price_3,"########.0000",V.local.stemp)
+			F.Intrinsic.String.Concat(V.Local.sText,V.ODBC.conx!rst.FieldVal!QB_QTY_3,"*!*",V.Local.sTemp,"*!*",V.Local.sText)
+		F.Intrinsic.Control.EndIf
+		'#4
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!QB_QTY_4,=,0)
+			F.Intrinsic.String.Concat(V.Local.sText,"*!**!*",V.Local.sText)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!Price_4,"########.0000",V.local.stemp)
+			F.Intrinsic.String.Concat(V.Local.sText,V.ODBC.conx!rst.FieldVal!QB_QTY_4,"*!*",V.Local.sTemp,"*!*",V.Local.sText)
+		F.Intrinsic.Control.EndIf
+		'#5
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!QB_QTY_5,=,0)
+			F.Intrinsic.String.Concat(V.Local.sText,"*!**!*",V.Local.sText)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!Price_5,"########.0000",V.local.stemp)
+			F.Intrinsic.String.Concat(V.Local.sText,V.ODBC.conx!rst.FieldVal!QB_QTY_5,"*!*",V.Local.sTemp,"*!*",V.Local.sText)
+		F.Intrinsic.Control.EndIf
+		'#6
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!QB_QTY_6,=,0)
+			F.Intrinsic.String.Concat(V.Local.sText,"*!**!*",V.Local.sText)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!Price_6,"########.0000",V.local.stemp)
+			F.Intrinsic.String.Concat(V.Local.sText,V.ODBC.conx!rst.FieldVal!QB_QTY_6,"*!*",V.Local.sTemp,"*!*",V.Local.sText)
+		F.Intrinsic.Control.EndIf
+		'#7
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!QB_QTY_7,=,0)
+			F.Intrinsic.String.Concat(V.Local.sText,"*!**!*",V.Local.sText)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!Price_7,"########.0000",V.local.stemp)
+			F.Intrinsic.String.Concat(V.Local.sText,V.ODBC.conx!rst.FieldVal!QB_QTY_7,"*!*",V.Local.sTemp,"*!*",V.Local.sText)
+		F.Intrinsic.Control.EndIf
+		'#8
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!QB_QTY_8,=,0)
+			F.Intrinsic.String.Concat(V.Local.sText,"*!*$!$",V.Local.sText)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!Price_8,"########.0000",V.local.stemp)
+			F.Intrinsic.String.Concat(V.Local.sText,V.ODBC.conx!rst.FieldVal!QB_QTY_8,"*!*",V.Local.sTemp,"$!$",V.Local.sText)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.String.Format(V.Ambient.Now,"YYYYMMDD-HHMMSS",V.Local.sDate)
+
+F.Intrinsic.String.Concat(V.Caller.FilesDir,"\UpdatePartPricing",V.local.sDate,".xls",V.Local.sFile)
+F.Intrinsic.String.Concat(V.Caller.FilesDir,"\UpdatePartPricing_Template.xls",V.Local.sTemp)
+F.Automation.MSExcel.WriteSpreadsheet(V.Local.sFile,V.local.sTemp,V.Local.sText)
+'F.Automation.OOCalc.WriteSpreadsheet(V.Local.sFile,V.Local.sTemp,True,V.Local.sText)
+'F.Automation.OOCalc.WriteSpreadsheet(V.Local.sFile,,True,V.Local.sText)
+F.Intrinsic.Task.ShellExec(V.Caller.Handle,"open",V.Local.sFile,"","",1)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Spreadsheet_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Update_Part_Pricing.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Spreadsheet.End
+
+Program.Sub.Rate_Change.Start
+F.Intrinsic.Control.SetErrorHandler("Rate_Change_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iUB.Declare(Long)
+V.Local.iCount.Declare(Long)
+V.Local.sDate.Declare(String)
+V.Local.sTime.Declare(String)
+V.Local.sSec.Declare(String)
+V.Local.iRate.Declare(String)
+V.Local.iLoop.Declare(Long)
+
+'F.Intrinsic.Debug.InvokeDebugger
+F.Intrinsic.Debug.Stop
+
+V.Local.iUB.Set(V.uGlobal.uUpdate.UBound)
+
+F.ODBC.Connection!conx.Execute("Delete from RATE_CHANGE")
+
+F.Intrinsic.Control.For(V.Local.iCount,0,V.Local.iUB,1)
+	F.Intrinsic.String.Concat("Select DISTINCT ROUTER, RUN_TIME from ROUTER_LINE where PART_WC_OUTSIDE='",V.uGlobal.uUpdate(v.Local.iCount)!Part,"' and PART_LOCN='",V.uGlobal.uUpdate(v.Local.iCount)!Loc,"' AND RUN_TIME <> '0.0000' ",V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstR",V.Local.sQuery)
+	F.Intrinsic.Control.dountil(V.ODBC.conx!rstR.EOF,=,True)
+		F.Intrinsic.Control.CallSub(Checktable,"Router",V.ODBC.conx!rstR.FieldVal!Router)
+		F.Intrinsic.Control.If(V.Args.bRet,=,True)
+			F.Intrinsic.String.Format(V.Ambient.Date,"YYYYMMDD",V.Local.sDate)
+			F.Intrinsic.String.Format(V.Ambient.Time,"HHMMSS",V.Local.sTime)
+			F.Intrinsic.String.LPad(V.Local.iCount,"0",2,V.Local.sSec)
+			F.Intrinsic.String.Concat(V.Local.sTime,V.Local.sSec,V.Local.sTime)
+			F.Intrinsic.Math.Mult(V.uGlobal.uUpdate(v.Local.iCount)!NewAltCost,V.ODBC.conx!rstR.FieldVal!RUN_TIME,V.Local.iRate)
+			V.Local.sQuery.Set("Select * From RATE_CHANGE")
+			F.ODBC.Connection!conx.OpenRecordsetRW("rstChange",V.Local.sQuery)
+			F.ODBC.conx!rstChange.AddNew
+			F.ODBC.conx!rstChange.Set!PART(V.ODBC.conx!rstR.FieldVal!Router)
+			F.ODBC.conx!rstChange.Set!CHG_DATE(V.Local.sDate)
+			F.ODBC.conx!rstChange.Set!CHG_TIME(V.Local.sTime)
+			F.ODBC.conx!rstChange.set!RATE_CHG(V.local.iRate)
+			F.ODBC.conx!rstChange.Update
+			F.ODBC.Conx!rstChange.Close
+		F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstR.MoveNext
+	F.Intrinsic.Control.loop
+	F.ODBC.conx!rstR.Close
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Rate_Change_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Update_Part_Pricing.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Rate_Change.End
+
+Program.Sub.Clear_form.Start
+
+Gui.F_Update.gsflexgrid1.Rows(1)
+Gui.F_Update.gsflexgrid1.Rows(2)
+Gui.F_Update.gsflexgrid1.FixedRows(1)
+Gui.F_Update.lvwRange.ClearItems
+Gui.F_Update.txtPart1.Text("")
+Gui.F_Update.txtPart2.Text("")
+
+Program.Sub.Clear_form.End
+
+Program.Sub.CheckTable.Start
+F.Intrinsic.Control.SetErrorHandler("CheckTable_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sText.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.bRet.Declare(Boolean)
+
+V.Local.sRouter.Set(V.Args.Router)
+
+F.Intrinsic.String.Concat("Select * From OE_C_PART_P_BRK where PART='",V.Local.sRouter,"'",V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRO("rstCheck",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.conx!rstCheck.EOF,=,False)
+	V.Local.bRet.Set(True)
+F.Intrinsic.Control.Else
+	V.Local.bRet.Set(False)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstCheck.Close
+
+F.Intrinsic.Variable.AddRV("bRet",V.Local.bRet)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("CheckTable_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Update_Part_Pricing.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.CheckTable.End
+
+
